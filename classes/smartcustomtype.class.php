@@ -87,7 +87,6 @@ if ( !class_exists( 'SmartCustomType' ) ) {
             
             $sql = "SELECT * FROM $this->cpt_table_name";
             $results = $wpdb->get_results( $sql );
-            var_dump( $results );
             if ( !$results ) return;
             foreach ( $results as $result ) {
                 $args = array(
