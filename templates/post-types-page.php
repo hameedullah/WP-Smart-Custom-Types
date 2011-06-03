@@ -2,10 +2,31 @@
 
 ?>
 <div class="wrap">
+
+    <h2>Smart Custom Post Types</h2>
+
+    <table class="wp-list-table widefat">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Public</th>
+                <th>Enable Menu</th>
+                <th>Archive</th>
+            </tr>
+        </thead>
+    <?php foreach ( $post_types as $post_type ) { ?>
+        <tr>
+            <th><?php echo $post_type->name; ?></th>
+            <th><?php echo $post_type->is_public; ?></th>
+            <th><?php echo $post_type->show_in_menu; ?></th>
+            <th><?php echo $post_type->has_archive; ?></th>
+        </tr>
+    <?php } ?>
+    </table>
+
     <form method="POST">
         <?php wp_nonce_field( 'sct_cpt_page', 'sct_cpt_nonce' ); ?>
-    <h2>Smart Custom Post Types</h2>
-    <table>
+    <table style="margin-top: 30px;">
         <tr>
             <td>Post Type Name</td>
             <td><input type="text" name="type_name" value="" size="20" /> (e.g: Company Member)</td>

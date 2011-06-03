@@ -72,6 +72,9 @@ if ( !class_exists( 'SmartCustomType' ) ) {
                 
 
             }
+
+            $sql = "SELECT * FROM {$this->cpt_table_name}";
+            $post_types = $wpdb->get_results( $sql );
             include( dirname( __FILE__ ) . '/../templates/post-types-page.php' );
         }
 
